@@ -1,34 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useQuery } from "react-query";
+import Index from "./pages/Index";
+import LoadingPage from "./components/LoadingPage";
+import FetchResult from "./components/FetchResult";
+
+const fetchAPI = async () => {
+  const res = await fetch("https://jsonplaceholder999.typicode.com/todos/1");
+  const data = res.json();
+  return data;
+};
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { data, isLoading, isSuccess } = useQuery("jsonPlaceholder", fetchAPI);
+  const checkLoading = isLoading === true ? <LoadingPage /> : "";
+  const checkFetch = isSuccess === true ? <Index /> : <FetchResult />;
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <>
+      <LoadingPage
+        txt={"顆顆想回家..."}
+        txtSize={"60px"}
+        transitionTime={"5s"}
+        bgColor={"#191970"}
+        fontColor={"#FFFFFF"}
+        loadingColor={"#C0C0C0"}
+      />
+      {/* {checkLoading}
+    {checkFetch} */}
+    </>
+  );
 }
 
-export default App
+export default App;
