@@ -37,7 +37,7 @@ function LoadingPage({
 
   return (
     <div
-      className={`text-white flex flex-col justify-center items-center h-full  bg-black z-50 relative ${result}`}
+      className={`text-white flex flex-col justify-center items-center h-full w-full  bg-black z-50 fixed ${result}`}
       style={backgroundColor}
     >
       <Loader
