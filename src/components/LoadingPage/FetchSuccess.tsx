@@ -1,10 +1,10 @@
-function Index() {
+function FetchSuccess() {
   return (
     <div id="container">
       Make
       <div id="flip">
-      <div><div>wOrK</div></div>
-      <div><div>lifeStyle</div></div>
+      <div><div>WorK</div></div>
+      <div><div>LifeStyle</div></div>
       <div><div>Everything</div></div>
       </div>
       AweSoMe!
@@ -12,4 +12,4 @@ function Index() {
   );
 }
 
-export default Index;
+export default FetchSuccess;
