@@ -11,6 +11,5 @@ const userQuery = new QueryClient();
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <QueryClientProvider client={userQuery}>
     <App />
-    <ReactQueryDevtools />
   </QueryClientProvider>
 );

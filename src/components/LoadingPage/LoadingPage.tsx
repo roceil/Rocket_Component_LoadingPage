@@ -33,6 +33,8 @@ function LoadingPage({
     backgroundColor: bgColor,
   };
 
+
+
   return (
     <div
       className={`text-white flex flex-col justify-center items-center h-full  bg-black z-50 relative ${result}`}
