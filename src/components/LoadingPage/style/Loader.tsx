@@ -16,7 +16,7 @@ export const Loader = styled.span.attrs<IProps>((props) => {
     loadingColor:props.loadingColor
   };
 })<IProps>`
-font-size: ${props=>props.txtSize};
+font-size: ${props=>props.txtSize || "64px"};
 display: inline-block;
 font-family: Arial, Helvetica, sans-serif;
 font-weight: bold;

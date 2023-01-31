@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import Index from "./components/LoadingPage/FetchSuccess";
+import FetchSuccess from "./components/LoadingPage/FetchSuccess";
 import LoadingPage from "./components/LoadingPage/LoadingPage";
 import FetchResult from "./components/LoadingPage/FetchFail";
 
@@ -14,19 +14,19 @@ function App() {
     refetchOnWindowFocus: false,
   });
 
-  const checkFetch = isSuccess === true ? <Index /> : <FetchResult />;
+  const checkFetch = isSuccess === true ? <FetchSuccess /> : <FetchResult />;
 
   return (
     <>
       <LoadingPage
-        txt={"努力加載中..."}
+        txt={"可以更改文字..."}
         txtSize={"60px"}
-        transitionTime={"5s"}
+        transitionTime={"1.5s"}
         bgColor={"#191970"}
         fontColor={"#FFFFFF"}
         loadingColor={"#C0C0C0"}
-        isLoading={isLoading} 
-        delayTime={1000}
+        isLoading={isLoading}
+        delayTime={2000}
       />
       {checkFetch}
     </>

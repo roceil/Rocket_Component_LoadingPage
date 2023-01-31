@@ -2,14 +2,14 @@ import { useState } from "react";
 import { Loader } from "./style/Loader";
 
 interface Props {
-  txt: string;
-  txtSize: string;
-  transitionTime: string;
-  bgColor: string;
-  fontColor: string;
-  loadingColor: string;
-  isLoading: boolean;
-  delayTime: number;
+  txt?: string;
+  txtSize?: string;
+  transitionTime?: string;
+  bgColor?: string;
+  fontColor?: string;
+  loadingColor?: string;
+  isLoading?: boolean;
+  delayTime?: number;
 }
 function LoadingPage({
   txt,
@@ -41,13 +41,13 @@ function LoadingPage({
       style={backgroundColor}
     >
       <Loader
-        txt={txt}
+        txt={txt?txt:"LOADING..."}
         txtSize={txtSize}
         transitionTime={transitionTime}
         fontColor={fontColor}
         loadingColor={loadingColor}
       >
-        {txt}
+        {txt?txt:"LOADING..."}
       </Loader>
     </div>
   );
